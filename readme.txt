@@ -1,1 +1,0 @@
-Especificaciones del proyecto
