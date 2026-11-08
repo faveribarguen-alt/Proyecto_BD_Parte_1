@@ -1,0 +1,29 @@
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    background: #0056b3;
+    padding: 12px 20px;
+    margin: -20px -20px 20px -20px;
+    font-family: Arial, sans-serif;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.menu-usuario {
+    color: #cfe2ff;
+    margin-right: auto;
+}
+
+.menu-salir {
+    color: #ffd6d6;
+}

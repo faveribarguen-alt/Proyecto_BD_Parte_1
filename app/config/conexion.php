@@ -1,9 +1,9 @@
 <?php
 class Database {
     private $host = "localhost";
-    private $db_name = "bd_encuestas"; // El nombre de la BD local
-    private $username = "encuestas_user";
-    private $password = "V4ll3_2026*"; // La contraseña de la BD local
+    private $db_name = "encuestas_db"; // El nombre de la BD local
+    private $username = "root";
+    private $password = ""; // La contraseña de la BD local
     public $conn;
 
     public function getConnection() {

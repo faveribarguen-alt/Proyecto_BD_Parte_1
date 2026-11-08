@@ -9,26 +9,28 @@ class UsuarioModel {
         $this->conn = $database->getConnection();
     }
 
-    // Método para validar el login
+    // Método para validar el login (el "username" del formulario es el correo)
     public function validarAcceso($username, $password) {
-        // PREVENCIÓN DE INYECCIÓN SQL: Usamos consultas preparadas (prepare)
-        $query = "SELECT id_usuario, nombres, apellidos, password, id_rol FROM usuarios WHERE username = :username LIMIT 1";
-        
+        // Consulta preparada para evitar inyección SQL. Solo entran usuarios activos.
+        $query = "SELECT id_usuario, nombres, apellidos, password_hash AS password, id_rol, id_punto
+                  FROM usuarios
+                  WHERE correo = :correo AND estado = 'activo'
+                  LIMIT 1";
+
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':correo', $username);
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            
-            // SEGURIDAD: Verificamos el hash de la contraseña
+
+            // Verificamos el hash de la contraseña
             if (password_verify($password, $row['password'])) {
-                // Si la contraseña coincide, devolvemos los datos del usuario (sin el password)
                 unset($row['password']);
                 return $row;
             }
         }
-        return false; // Retorna falso si el usuario no existe o la clave es incorrecta
+        return false;
     }
 }
 ?>
