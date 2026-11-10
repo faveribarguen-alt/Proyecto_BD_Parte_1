@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<?php require __DIR__ . '/../layouts/menu.php'; ?>
+
 <div class="form-container">
     <h2>Registrar Solicitud de Encuesta</h2>
     
