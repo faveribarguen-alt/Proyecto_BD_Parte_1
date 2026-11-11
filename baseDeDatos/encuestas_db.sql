@@ -1,18 +1,26 @@
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
-
---Este archivo contiene la estructura y los datos de la base de datos `encuestas_db` 
---completamente exportada para trabajar con phpMyAdmin 5.2.1 y MySQL 8.0.33
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 12-11-2026 a las 00:03:37
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
 -- Base de datos: `encuestas_db`
-CREATE DATABASE IF NOT EXISTS encuestas_db 
-CHARACTER SET utf8mb4 
-COLLATE utf8mb4_general_ci;
+--
+
 -- --------------------------------------------------------
 
 --
@@ -302,7 +310,8 @@ INSERT INTO `solicitantes` (`id_solicitante`, `tipo_documento`, `numero_document
 (1, 'CC', '1105371870', 'LUIS', 'RENGIFO', '3026658879', NULL, 'CL 20 B  40 F SUR 10', 1),
 (2, 'CC', '51651', 'felipe', 'galindo', '3045451', NULL, 'CL 21 B  41  F SUR 11', 2),
 (3, 'CC', '5165154', 'MIGUEL', 'ARANGO', '3045451474', NULL, 'CL 20 B  40 F SUR 10', 14),
-(4, 'CC', '111495', 'Lucia', 'Arango', '3107772898', NULL, 'trnasversal 17 #10-10 ', 4);
+(4, 'CC', '111495', 'Lucia', 'Arango', '3107772898', NULL, 'trnasversal 17 #10-10 ', 4),
+(5, 'CC', '111495', 'e', 'e', 'e', NULL, 'e', 5);
 
 -- --------------------------------------------------------
 
@@ -384,13 +393,13 @@ INSERT INTO `usuarios` (`id_usuario`, `id_rol`, `id_punto`, `nombres`, `apellido
 (26, 4, 1, 'Ricardo', 'Molina', 'ricardo@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.', 'activo', '2026-11-11 20:31:39'),
 (27, 4, 1, 'Patricia', 'Cortes', 'patricia@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.', 'activo', '2026-11-11 20:31:39'),
 (28, 4, 1, 'Fernando', 'Silva', 'fernando@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.', 'activo', '2026-11-11 20:31:39'),
-(29, 2, 2, 'Andrea', 'Quintero', 'andrea@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.', 'activo', '2026-11-11 20:31:39'),
-(30, 2, 3, 'Monica', 'Salazar', 'monica@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.', 'activo', '2026-11-11 20:31:39'),
-(31, 2, 4, 'Felipe', 'Cardona', 'felipe@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.', 'activo', '2026-11-11 20:31:39'),
-(32, 2, 5, 'Daniela', 'Acosta', 'daniela@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.', 'activo', '2026-11-11 20:31:39'),
-(33, 2, 6, 'Alejandro', 'Velez', 'alejandro@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.', 'activo', '2026-11-11 20:31:39'),
-(34, 2, 7, 'Carolina', 'Mejia', 'carolina@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4o3Ro9llC/.og/at2uheWG/igi.', 'activo', '2026-11-11 20:31:39'),
-(35, 2, 8, 'Jorge', 'Cabrera', 'jorge@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oEa3Ro9llC/.og/at2uheWG/igi.', 'activo', '2026-11-11 20:31:39');
+(29, 2, 2, 'Andrea', 'Quintero', 'andrea@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'activo', '2026-11-11 20:31:39'),
+(30, 2, 3, 'Monica', 'Salazar', 'monica@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'activo', '2026-11-11 20:31:39'),
+(31, 2, 4, 'Felipe', 'Cardona', 'felipe@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'activo', '2026-11-11 20:31:39'),
+(32, 2, 5, 'Daniela', 'Acosta', 'daniela@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'activo', '2026-11-11 20:31:39'),
+(33, 2, 6, 'Alejandro', 'Velez', 'alejandro@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'activo', '2026-11-11 20:31:39'),
+(34, 2, 7, 'Carolina', 'Mejia', 'carolina@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'activo', '2026-11-11 20:31:39'),
+(35, 2, 8, 'Jorge', 'Cabrera', 'jorge@encuestas360.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'activo', '2026-11-11 20:31:39');
 
 -- --------------------------------------------------------
 
@@ -556,7 +565,7 @@ ALTER TABLE `encuestas`
 -- AUTO_INCREMENT de la tabla `georreferenciacion`
 --
 ALTER TABLE `georreferenciacion`
-  MODIFY `id_geo` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_geo` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `historial_estados`
@@ -592,13 +601,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `solicitantes`
 --
 ALTER TABLE `solicitantes`
-  MODIFY `id_solicitante` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_solicitante` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitudes`
 --
 ALTER TABLE `solicitudes`
-  MODIFY `id_solicitud` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_solicitud` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
