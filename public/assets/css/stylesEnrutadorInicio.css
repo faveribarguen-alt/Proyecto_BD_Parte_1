@@ -1,0 +1,264 @@
+
+.enrutador-inicio {
+    color: #30283b;
+}
+
+.inicio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.inicio-etiqueta {
+    color: #8753cf;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.inicio-header h1 {
+    margin: 8px 0;
+    font-size: 30px;
+    color: #30243e;
+}
+
+.inicio-header p,
+.seccion-encabezado p {
+    color: #898194;
+    margin: 0;
+    font-size: 14px;
+}
+
+.inicio-fecha {
+    background: #f3ecfc;
+    padding: 15px 22px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #7950b5;
+    font-size: 12px;
+}
+
+.inicio-fecha strong {
+    font-size: 19px;
+}
+
+.enrutador-estadisticas {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.estadistica-card {
+    background: #fff;
+    border: 1px solid #eee7f7;
+    border-radius: 16px;
+    padding: 22px 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(70, 40, 100, 0.04);
+}
+
+.estadistica-card span {
+    display: block;
+    color: #746d80;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.estadistica-card strong {
+    display: block;
+    color: #30243e;
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.estadistica-card small {
+    color: #aaa3b4;
+    font-size: 10px;
+}
+
+.estadistica-icono {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.estadistica-icono.morado {
+    background: #eee4fc;
+    color: #8753cf;
+}
+
+.estadistica-icono.naranja {
+    background: #fff0df;
+    color: #dc923d;
+}
+
+.estadistica-icono.rosado {
+    background: #fce8f2;
+    color: #cf659a;
+}
+
+.estadistica-icono.verde {
+    background: #e4f5ed;
+    color: #479b70;
+}
+
+.inicio-seccion {
+    background: #fff;
+    border: 1px solid #eee7f7;
+    border-radius: 17px;
+    padding: 24px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(70, 40, 100, 0.035);
+}
+
+.seccion-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.seccion-encabezado h2 {
+    color: #30243e;
+    font-size: 18px;
+    margin: 0 0 7px;
+}
+
+.enlace-seccion {
+    color: #8753cf;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.enlace-seccion:hover {
+    color: #6130a5;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla-enrutador {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.tabla-enrutador th {
+    background: #f7f3fc;
+    color: #786b8a;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: left;
+    padding: 14px 12px;
+}
+
+.tabla-enrutador td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #f0ebf5;
+    color: #554d60;
+    font-size: 12px;
+}
+
+.tabla-enrutador td strong {
+    color: #7950b5;
+}
+
+.tabla-enrutador td small {
+    display: block;
+    color: #aaa3b4;
+    margin-top: 4px;
+}
+
+.estado-enrutador {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    background: #f0eafa;
+    color: #7950b5;
+    white-space: nowrap;
+}
+
+.estado-radicada {
+    background: #fff0df;
+    color: #bd7b29;
+}
+
+.estado-asignada,
+.estado-programada {
+    background: #eee6fc;
+    color: #7950b5;
+}
+
+.estado-visitada,
+.estado-cerrada,
+.estado-apto {
+    background: #e4f5ed;
+    color: #39835f;
+}
+
+.estado-en_campo {
+    background: #e3efff;
+    color: #4776b7;
+}
+
+.estado-vencida,
+.estado-no_apto,
+.estado-cancelada {
+    background: #fce8ed;
+    color: #bd5670;
+}
+
+.tabla-vacia {
+    text-align: center;
+    padding: 30px !important;
+    color: #aaa3b4 !important;
+}
+
+@media (max-width: 1100px) {
+    .enrutador-estadisticas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .inicio-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .inicio-header h1 {
+        font-size: 24px;
+    }
+
+    .enrutador-estadisticas {
+        grid-template-columns: 1fr;
+    }
+
+    .inicio-seccion {
+        padding: 16px;
+    }
+
+    .seccion-encabezado {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

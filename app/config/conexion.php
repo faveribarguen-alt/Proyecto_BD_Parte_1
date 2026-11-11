@@ -2,8 +2,8 @@
 class Database {
     private $host = "localhost";
     private $db_name = "encuestas_db"; // El nombre de la BD local
-    private $username = "encuestas_app";
-    private $password = "20252724"; // La contraseña de la BD local
+    private $username = "root";
+    private $password = ""; // La contraseña de la BD local
     public $conn;
 
     public function getConnection() {
@@ -16,7 +16,7 @@ class Database {
             // Forzar el uso de caracteres UTF-8
             $this->conn->exec("set names utf8");
         } catch(PDOException $exception) {
-            echo "Error de conexión: " . $exception->getMessage();
+            die("Error de conexión a la base de datos: " . $exception->getMessage());
         }
         return $this->conn;
     }

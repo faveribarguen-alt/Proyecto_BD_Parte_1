@@ -1,0 +1,389 @@
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+
+.ventanilla-main.distribucion-contenido {
+    width: calc(100% - 265px);
+    max-width: none;
+    min-width: 0;
+    margin-left: 265px;
+    padding: 30px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.distribucion-contenido * {
+    box-sizing: border-box;
+}
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.encabezado-distribucion {
+    margin-bottom: 25px;
+}
+
+.encabezado-distribucion h1 {
+    margin: 0 0 8px;
+    color: #33245f;
+    font-size: 28px;
+}
+
+.encabezado-distribucion p {
+    color: #777;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* =========================================
+   INFORMACIÓN DE LA JORNADA
+========================================= */
+
+.informacion-jornada {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.informacion-jornada div {
+    background: #f4f0fb;
+    border: 1px solid #e5dcf3;
+    border-radius: 10px;
+    padding: 16px;
+    color: #554477;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.informacion-jornada strong {
+    display: block;
+    color: #39265f;
+    margin-bottom: 5px;
+}
+
+/* =========================================
+   PANELES
+========================================= */
+
+.panel-distribucion {
+    width: 100%;
+    min-width: 0;
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 14px rgba(50, 30, 90, 0.07);
+}
+
+.panel-distribucion h2 {
+    color: #39265f;
+    font-size: 19px;
+    margin: 0 0 16px;
+}
+
+/* =========================================
+   FILTRO DE FECHA
+========================================= */
+
+.formulario-fecha {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.campo-fecha {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.campo-fecha label {
+    font-weight: 600;
+    color: #44366d;
+}
+
+.campo-fecha input {
+    padding: 11px 12px;
+    border: 1px solid #d8d0e9;
+    border-radius: 8px;
+    min-width: 200px;
+    max-width: 100%;
+    font-size: 14px;
+}
+
+.campo-fecha input:focus {
+    outline: none;
+    border-color: #8062b5;
+    box-shadow: 0 0 0 2px rgba(128, 98, 181, 0.12);
+}
+
+.btn-consultar {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    background: #7252ad;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-consultar:hover {
+    background: #5d3e96;
+}
+
+/* =========================================
+   TARJETAS DE RESUMEN
+========================================= */
+
+.resumen-distribucion {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.tarjeta-resumen {
+    min-width: 0;
+    background: white;
+    border-radius: 13px;
+    padding: 22px;
+    border-left: 5px solid #8062b5;
+    box-shadow: 0 3px 14px rgba(50, 30, 90, 0.07);
+}
+
+.tarjeta-resumen span {
+    display: block;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 9px;
+}
+
+.tarjeta-resumen strong {
+    font-size: 28px;
+    color: #39265f;
+}
+
+/* =========================================
+   TÍTULOS DE LOS PANELES
+========================================= */
+
+.titulo-panel {
+    margin-bottom: 20px;
+}
+
+.titulo-panel h2 {
+    margin: 0 0 8px;
+}
+
+.titulo-panel p {
+    color: #777;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* =========================================
+   TABLAS
+========================================= */
+
+.tabla-contenedor {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    border-radius: 9px;
+}
+
+.tabla-distribucion {
+    width: 100%;
+    min-width: 1100px;
+    border-collapse: collapse;
+    background: white;
+}
+
+.tabla-distribucion th {
+    background: #f0ebf8;
+    color: #443366;
+    text-align: left;
+    padding: 13px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.tabla-distribucion td {
+    padding: 12px;
+    border-bottom: 1px solid #eee9f4;
+    color: #555;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.tabla-distribucion tbody tr:hover td {
+    background: #faf8fd;
+}
+
+/* =========================================
+   SELECT DE ENCUESTADOR Y PUNTO
+========================================= */
+
+.tabla-distribucion select {
+    width: 190px;
+    max-width: 100%;
+    padding: 9px;
+    border: 1px solid #d8d0e9;
+    border-radius: 7px;
+    color: #443366;
+    background: white;
+    font-size: 13px;
+}
+
+.tabla-distribucion select:focus {
+    outline: none;
+    border-color: #8062b5;
+    box-shadow: 0 0 0 2px rgba(128, 98, 181, 0.12);
+}
+
+/* =========================================
+   ETIQUETA DE ZONA
+========================================= */
+
+.etiqueta-zona {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: #eee8fa;
+    color: #63469b;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* =========================================
+   ACCIONES Y CONFIRMACIÓN
+========================================= */
+
+.acciones-distribucion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+}
+
+.acciones-distribucion p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.5;
+    flex: 1;
+    min-width: 200px;
+    margin: 0;
+}
+
+.btn-confirmar {
+    border: none;
+    border-radius: 8px;
+    padding: 13px 20px;
+    background: #7252ad;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-confirmar:hover {
+    background: #5d3e96;
+}
+
+/* =========================================
+   MENSAJES
+========================================= */
+
+.mensaje-vacio {
+    padding: 25px;
+    text-align: center;
+    color: #777;
+    background: #faf9fc;
+    border-radius: 9px;
+}
+
+.mensaje-error {
+    padding: 14px 17px;
+    margin-bottom: 20px;
+    border-radius: 9px;
+    background: #fff0f0;
+    color: #a32d2d;
+    border: 1px solid #f2cccc;
+}
+
+.mensaje-informativo {
+    padding: 15px 18px;
+    background: #f4f0fb;
+    border-radius: 9px;
+    color: #554477;
+    margin-bottom: 22px;
+    line-height: 1.5;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+    .informacion-jornada {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .resumen-distribucion {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .ventanilla-main.distribucion-contenido {
+        width: 100%;
+        margin-left: 0;
+        padding: 22px 15px;
+    }
+
+    .informacion-jornada {
+        grid-template-columns: 1fr;
+    }
+
+    .resumen-distribucion {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-distribucion {
+        padding: 16px;
+    }
+
+    .formulario-fecha {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .campo-fecha input {
+        width: 100%;
+    }
+
+    .btn-consultar {
+        width: 100%;
+    }
+
+    .acciones-distribucion {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-confirmar {
+        width: 100%;
+    }
+}
+
+

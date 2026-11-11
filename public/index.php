@@ -11,7 +11,7 @@ require_once __DIR__ . '/../app/controllers/EnrutadorController.php';
 require_once __DIR__ . '/../app/controllers/PuntoController.php';
 require_once __DIR__ . '/../app/controllers/HojaRutaController.php';
 
-$action = isset($_GET['action']) ? $_GET['action'] : 'login';
+$action = $_GET['action'] ?? $_POST['action'] ?? 'login';
 
 $authController = new AuthController();
 $ventanillaController = new VentanillaController();
@@ -32,24 +32,43 @@ switch ($action) {
     case 'logout':
         $authController->logout();
         break;
+    case 'enrutador_inicio':
+    $enrutadorController->mostrarInicio();
+    break;
 
     // RUTAS DE VENTANILLA
+    case 'ventanilla_inicio':
+        $ventanillaController->mostrarInicio();
+        break;
+
     case 'ventanilla_registrar':
         $ventanillaController->mostrarFormulario();
         break;
+
+    case 'ventanilla_consultar':
+        $ventanillaController->consultarSolicitudes();
+        break;
+
     case 'guardar_solicitud':
         $ventanillaController->procesarSolicitud();
         break;
+
     case 'ventanilla_hojas':
         $hojaRutaController->listarEntregas();
-        break;
-    case 'entregar_hoja':
-        $hojaRutaController->entregar();
         break;
 
     // RUTAS DE ENRUTADOR
     case 'bitacora':
         $enrutadorController->mostrarBitacora();
+        break;
+    case 'georreferenciacion':
+        $enrutadorController->mostrarGeorreferenciacion();
+        break;
+    case 'distribucion_visitas':
+        $enrutadorController->mostrarDistribucionVisitas();
+        break;
+    case 'confirmar_distribucion':
+        $enrutadorController->confirmarDistribucion();
         break;
     case 'hojas_ruta':
         $hojaRutaController->listar();
@@ -57,6 +76,7 @@ switch ($action) {
     case 'generar_hoja':
         $hojaRutaController->generar();
         break;
+    
 
     // VER UNA HOJA DE RUTA (enrutador, ventanilla, encuestador y administrador)
     case 'ver_hoja':

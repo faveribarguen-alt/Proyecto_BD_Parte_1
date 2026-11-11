@@ -1,0 +1,232 @@
+
+/* CONSULTAR SOLICITUDES */
+
+.consulta-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 27px 0;
+}
+
+.consulta-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid #eee7f8;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(70,35,120,.04);
+}
+
+.consulta-stat-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3ecfc;
+    color: #7438c8;
+    border-radius: 14px;
+    font-size: 25px;
+}
+
+.vencidas-icon {
+    background: #fff1e8;
+    color: #d97735;
+}
+
+.consulta-stat-card span {
+    display: block;
+    color: #777083;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.consulta-stat-card strong {
+    display: block;
+    color: #251b35;
+    font-size: 27px;
+    margin-bottom: 4px;
+}
+
+.consulta-stat-card small {
+    color: #9992a3;
+    font-size: 11px;
+}
+
+.consulta-filter-section {
+    background: #fff;
+    border: 1px solid #eee7f8;
+    border-radius: 16px;
+    padding: 23px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(70,35,120,.04);
+}
+
+.consulta-heading h2 {
+    margin: 0 0 6px;
+    color: #251b35;
+    font-size: 19px;
+}
+
+.consulta-heading p {
+    margin: 0;
+    color: #898293;
+    font-size: 13px;
+}
+
+.consulta-form {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) 220px auto auto;
+    align-items: end;
+    gap: 13px;
+    margin-top: 22px;
+}
+
+.consulta-search,
+.consulta-select {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.consulta-form label {
+    color: #51465f;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.consulta-form input,
+.consulta-form select {
+    width: 100%;
+    height: 43px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    border: 1px solid #e7dfef;
+    border-radius: 9px;
+    background: #fff;
+    color: #51465f;
+    font-size: 13px;
+    outline: none;
+}
+
+.consulta-form input:focus,
+.consulta-form select:focus {
+    border-color: #a879ed;
+    box-shadow: 0 0 0 3px rgba(168,121,237,.12);
+}
+
+.consulta-btn,
+.consulta-clear-btn {
+    height: 43px;
+    padding: 0 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.consulta-btn {
+    background: #7438c8;
+    color: #fff;
+}
+
+.consulta-btn:hover {
+    background: #5f29ad;
+}
+
+.consulta-clear-btn {
+    background: #f3ecfc;
+    color: #7438c8;
+}
+
+.consulta-clear-btn:hover {
+    background: #e8dcf8;
+}
+
+.consulta-table-section {
+    margin-top: 25px;
+}
+
+.consulta-counter {
+    padding: 9px 13px;
+    background: #f3ecfc;
+    color: #7438c8;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.requests-table td small {
+    display: block;
+    margin-top: 4px;
+    color: #9992a3;
+}
+
+.fecha-vencida {
+    color: #c45b39;
+    font-weight: 700;
+}
+
+.fecha-normal {
+    color: #655e70;
+}
+
+.consulta-empty {
+    padding: 25px 10px;
+    text-align: center;
+}
+
+.consulta-empty span {
+    display: block;
+    color: #a879ed;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.consulta-empty strong {
+    display: block;
+    color: #332747;
+    margin-bottom: 7px;
+}
+
+.consulta-empty p {
+    color: #827b8d;
+    font-size: 13px;
+    margin: 0;
+}
+
+@media (max-width: 1050px) {
+    .consulta-form {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .consulta-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .consulta-form {
+        grid-template-columns: 1fr;
+    }
+
+    .consulta-filter-section {
+        padding: 17px;
+    }
+
+    .consulta-btn,
+    .consulta-clear-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

@@ -1,33 +1,65 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Encuestas Valle</title>
-    <!-- Enlace al archivo CSS externo. La ruta parte desde public/ -->
-    <link rel="stylesheet" href="assets/css/styleLogin.css">
-</head>
-<body>
+<?php
+$error = $error ?? '';
+?>
+
+<link rel="stylesheet" href="/Proyecto_BD_Parte_1/public/assets/css/styleLogin.css">
 
 <div class="login-container">
-    <h2>Inicio de Sesión</h2>
-    
-    <?php if (isset($error)): ?>
-        <div class="error"><?php echo $error; ?></div>
+
+    <div class="logo">
+        <h1>ENCUESTAS360</h1>
+        <p>Sistema de gestión de encuestas</p>
+    </div>
+
+    <div class="login-header">
+        <div class="welcome">BIENVENIDO</div>
+
+        <h2>Iniciar sesión</h2>
+
+        <p>Ingresa tus datos para acceder al sistema.</p>
+    </div>
+
+    <?php if (!empty($error)): ?>
+        <div class="error-message">
+            <?= htmlspecialchars($error) ?>
+        </div>
     <?php endif; ?>
 
-    <form action="index.php?action=procesar_login" method="POST">
+    <form method="POST" action="index.php?action=procesar_login">
+
         <div class="form-group">
-            <label for="username">Usuario</label>
-            <input type="text" id="username" name="username" required>
+            <label for="username">Correo electrónico</label>
+
+            <input
+                type="email"
+                id="username"
+                name="username"
+                placeholder="usuario@ejemplo.com"
+                required
+            >
         </div>
+
         <div class="form-group">
             <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit" class="btn-login">Ingresar</button>
-    </form>
-</div>
 
-</body>
-</html>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Ingresa tu contraseña"
+                required
+            >
+        </div>
+
+        <button type="submit" class="login-button">
+            Ingresar al sistema
+        </button>
+
+    </form>
+
+    <div class="login-footer">
+        Acceso exclusivo para usuarios autorizados.<br>
+        <strong>ENCUESTAS360</strong> © 2026
+    </div>
+
+</div>

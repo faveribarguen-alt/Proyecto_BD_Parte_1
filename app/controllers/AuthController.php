@@ -33,8 +33,9 @@ class AuthController {
                     case 1: // Enrutador
                         header("Location: index.php?action=bitacora");
                         break;
-                    case 2: // Ventanilla
-                        header("Location: index.php?action=ventanilla_registrar");
+                    case 2:
+                        header("Location: index.php?action=ventanilla_inicio");
+                        break;
                         break;
                     case 3: // Encuestador
                         header("Location: index.php?action=panel_encuestador");

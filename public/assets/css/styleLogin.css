@@ -1,56 +1,296 @@
-/* Estilos básicos y profesionales (RIA) */
-body { 
-    font-family: Arial, sans-serif; 
-    background-color: #f4f7f6; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-    margin: 0; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.login-container { 
-    background: white; 
-    padding: 30px; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-    width: 100%; 
-    max-width: 350px; 
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    color: #171321;
+    position: relative;
+    overflow-x: hidden;
 }
-.login-container h2 { 
-    text-align: center; 
-    color: #333; 
+
+/* Decoraciones moradas del fondo */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(
+        circle,
+        rgba(116, 56, 200, 0.13),
+        rgba(116, 56, 200, 0)
+    );
+    top: -130px;
+    right: -100px;
+    border-radius: 50%;
+    pointer-events: none;
 }
-.form-group { 
-    margin-bottom: 15px; 
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(
+        circle,
+        rgba(168, 121, 237, 0.13),
+        rgba(168, 121, 237, 0)
+    );
+    bottom: -130px;
+    left: -100px;
+    border-radius: 50%;
+    pointer-events: none;
 }
-.form-group label { 
-    display: block; 
-    margin-bottom: 5px; 
-    color: #666; 
+
+/* Contenedor principal */
+
+.login-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 470px;
+    background: #ffffff;
+    padding: 45px 42px;
+    border-radius: 20px;
+    border: 1px solid #f0eaf8;
+    box-shadow: 0 15px 50px rgba(65, 35, 100, 0.09);
 }
-.form-group input { 
-    width: 100%; 
-    padding: 10px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    box-sizing: border-box; 
+
+/* Logotipo */
+
+.logo {
+    text-align: center;
+    margin-bottom: 38px;
 }
-.btn-login { 
-    width: 100%; 
-    padding: 10px; 
-    background-color: #0056b3; 
-    color: white; 
-    border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
-    font-size: 16px; 
+
+.logo h1 {
+    font-size: 29px;
+    font-weight: 800;
+    color: #7438c8;
+    letter-spacing: 1px;
 }
-.btn-login:hover { 
-    background-color: #004494; 
+
+.logo p {
+    color: #898390;
+    font-size: 13px;
+    margin-top: 7px;
 }
-.error { 
-    color: red; 
-    text-align: center; 
-    margin-bottom: 15px; 
-    font-size: 14px; 
+
+/* Encabezado */
+
+.login-header {
+    margin-bottom: 30px;
+}
+
+.welcome {
+    color: #7438c8;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.login-header h2 {
+    font-size: 29px;
+    font-weight: 750;
+    margin-bottom: 9px;
+    color: #171321;
+}
+
+.login-header p {
+    color: #77717f;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Campos del formulario */
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 650;
+    margin-bottom: 10px;
+    color: #292333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #e4dceE;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    color: #171321;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: #aaa3b2;
+}
+
+.form-group input:focus {
+    border-color: #7438c8;
+    box-shadow: 0 0 0 4px rgba(116, 56, 200, 0.10);
+}
+
+/* Botón de ingreso */
+
+.login-button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #7438c8, #9258df);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(116, 56, 200, 0.20);
+}
+
+.login-button:hover {
+    background: linear-gradient(135deg, #5e27a8, #7438c8);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(116, 56, 200, 0.25);
+}
+
+/* Mensaje de error */
+
+.error-message {
+    background: #fff0f0;
+    color: #bd3030;
+    border: 1px solid #ffd6d6;
+    padding: 13px;
+    border-radius: 9px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/* Pie de página */
+
+.login-footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #898390;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.login-footer strong {
+    color: #7438c8;
+}
+
+/* Adaptación a celulares */
+
+@media (max-width: 500px) {
+    body {
+        padding: 15px;
+    }
+
+    .login-container {
+        padding: 35px 24px;
+    }
+
+    .login-header h2 {
+        font-size: 25px;
+    }
+
+    .logo h1 {
+        font-size: 25px;
+    }
+}
+
+
+/* Fondo blanco con más lavanda */
+body::before {
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(
+        circle,
+        rgba(168, 121, 237, 0.22),
+        rgba(220, 200, 250, 0.12),
+        transparent 70%
+    );
+    top: -150px;
+    right: -120px;
+}
+
+body::after {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(
+        circle,
+        rgba(220, 200, 250, 0.35),
+        rgba(243, 236, 252, 0.15),
+        transparent 70%
+    );
+    bottom: -150px;
+    left: -120px;
+}
+
+/* Tarjeta con un borde lavanda */
+.login-container {
+    border: 1px solid #E6D8FA;
+    box-shadow: 0 15px 50px rgba(116, 56, 200, 0.12);
+}
+
+/* Logotipo con fondo lavanda */
+.logo h1 {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #F3ECFC;
+    border-radius: 12px;
+}
+
+/* Texto de bienvenida */
+.welcome {
+    display: inline-block;
+    padding: 7px 12px;
+    background: #F3ECFC;
+    border-radius: 20px;
+}
+
+/* Campos con fondo lavanda muy suave */
+.form-group input {
+    background: #FCFAFF;
+    border-color: #E6D8FA;
+}
+
+/* Lavanda al seleccionar los campos */
+.form-group input:focus {
+    background: #FFFFFF;
+    border-color: #A879ED;
+    box-shadow: 0 0 0 4px rgba(168, 121, 237, 0.17);
+}
+
+/* Botón con degradado morado y lavanda */
+.login-button {
+    background: linear-gradient(
+        120deg,
+        #7438C8,
+        #9258DF,
+        #A879ED
+    );
+}
+
+/* Pie de página */
+.login-footer strong {
+    background: #F3ECFC;
+    padding: 4px 9px;
+    border-radius: 6px;
 }

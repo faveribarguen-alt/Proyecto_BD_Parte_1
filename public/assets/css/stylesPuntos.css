@@ -1,41 +1,284 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f4f7f6;
+
+/* =========================================
+   PUNTOS DE ATENCION - ENCUESTAS360
+   ========================================= */
+
+.pagina-puntos {
+    background: #faf9fc;
 }
 
-.barra {
+/* TARJETAS DE ESTADISTICAS */
+
+.puntos-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 28px 0;
+}
+
+.punto-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #eee7f8;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(70, 35, 120, 0.04);
+}
+
+.punto-stat-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #f3ecfc;
+    color: #7438c8;
+    font-size: 27px;
+}
+
+.principal-icon {
+    background: #eee5fc;
+    color: #7438c8;
+}
+
+.secundario-icon {
+    background: #f5efff;
+    color: #a879ed;
+}
+
+.punto-stat-card span {
+    display: block;
+    color: #777083;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.punto-stat-card strong {
+    display: block;
+    color: #251b35;
+    font-size: 27px;
+    margin-bottom: 4px;
+}
+
+.punto-stat-card small {
+    color: #9992a3;
+    font-size: 11px;
+}
+
+/* SECCIONES */
+
+.puntos-map-section,
+.puntos-table-section {
+    background: #ffffff;
+    border: 1px solid #eee7f8;
+    border-radius: 17px;
+    padding: 23px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(70, 35, 120, 0.04);
+}
+
+.puntos-section-heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-.btn-logout {
-    color: red;
-    text-decoration: none;
-    font-weight: bold;
+.puntos-section-heading h2 {
+    margin: 0 0 6px;
+    color: #251b35;
+    font-size: 19px;
 }
+
+.puntos-section-heading p {
+    margin: 0;
+    color: #898293;
+    font-size: 13px;
+}
+
+.map-status,
+.puntos-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 13px;
+    border-radius: 20px;
+    background: #f3ecfc;
+    color: #7438c8;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.map-status > span {
+    width: 8px;
+    height: 8px;
+    background: #7438c8;
+    border-radius: 50%;
+}
+
+/* MAPA */
 
 #mapa {
-    height: 420px;
-    border-radius: 8px;
-    margin: 15px 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    height: 440px;
+    border-radius: 13px;
+    overflow: hidden;
+    border: 1px solid #eee7f8;
+    z-index: 1;
 }
 
-table {
+.map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    padding-top: 17px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #777083;
+    font-size: 12px;
+}
+
+.legend-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.principal-dot {
+    background: #7438c8;
+}
+
+.secondary-dot {
+    background: #a879ed;
+}
+
+/* TABLA */
+
+.puntos-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.puntos-table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
+    min-width: 650px;
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
+.puntos-table thead {
+    background: #f7f3fc;
+}
+
+.puntos-table th {
+    padding: 15px;
+    color: #625477;
+    font-size: 12px;
+    font-weight: 700;
     text-align: left;
+    border-bottom: 1px solid #eee7f8;
 }
 
-th {
-    background-color: #0056b3;
-    color: white;
+.puntos-table td {
+    padding: 16px 15px;
+    color: #655e70;
+    font-size: 13px;
+    border-bottom: 1px solid #f0edf4;
 }
+
+.puntos-table tbody tr:hover {
+    background: #fcfaff;
+}
+
+.puntos-table td strong {
+    color: #332747;
+}
+
+.punto-type {
+    display: inline-block;
+    padding: 7px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.principal-type {
+    background: #eee5fc;
+    color: #7438c8;
+}
+
+.secondary-type {
+    background: #f3ecfc;
+    color: #8b65bd;
+}
+
+.puntos-empty {
+    padding: 30px !important;
+    text-align: center;
+    color: #898293 !important;
+}
+
+/* POPUPS DE LEAFLET */
+
+.leaflet-popup-content-wrapper {
+    border-radius: 12px;
+}
+
+.leaflet-popup-content {
+    color: #51465f;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.leaflet-popup-content strong {
+    color: #7438c8;
+    font-size: 14px;
+}
+
+.leaflet-popup-content em {
+    color: #8b65bd;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .puntos-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .puntos-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .puntos-map-section,
+    .puntos-table-section {
+        padding: 16px;
+    }
+
+    .puntos-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #mapa {
+        height: 350px;
+    }
+
+    .map-legend {
+        gap: 12px;
+    }
+}
+
