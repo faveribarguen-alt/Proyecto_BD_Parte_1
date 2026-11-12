@@ -19,8 +19,6 @@ Los puntos 5 a 9 (puntos de atención fijos, hojas de ruta, entrega de hojas, in
 
 ## **2\. Metodología Scrum**
 
-\[COMPLETAR: ajustar esta sección a las reuniones, fechas y reparto reales del equipo; lo que está escrito es la estructura que exige el enunciado.\]
-
 ### **2.1 Roles**
 
 | Rol Scrum | Responsabilidad | Integrante |
@@ -272,12 +270,7 @@ WHERE correo \= :correo AND estado \= 'activo'
 LIMIT 1;  
 Justificación: el parámetro :correo se vincula con PDO, lo que impide la inyección SQL; solo ingresan usuarios activos y la contraseña se compara en PHP con password\_verify.
 
-**DCL.** Se crea un usuario de base de datos exclusivo para la aplicación, con permisos mínimos.
-
-CREATE USER 'encuestas\_app'@'localhost' IDENTIFIED BY 'CLAVE\_SEGURA';  
-GRANT SELECT, INSERT, UPDATE ON encuestas\_db.\* TO 'encuestas\_app'@'localhost';  
-FLUSH PRIVILEGES;  
-Justificación: la aplicación no se conecta como root. Con el principio de mínimo privilegio, si alguien lograra atacar la aplicación, no podría borrar datos ni modificar la estructura. La sentencia REVOKE permite retirar un permiso cuando ya no se necesite.
+**DCL.** Se Usa el usuario root
 
 **TCL.** No se usa en el login. Justificación: el ingreso es una sola consulta de lectura que no modifica datos, así que no hay nada que confirmar o deshacer.
 

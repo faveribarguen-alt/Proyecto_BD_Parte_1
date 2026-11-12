@@ -73,6 +73,9 @@ switch ($action) {
     case 'hojas_ruta':
         $hojaRutaController->listar();
         break;
+    case 'entregar_hoja':
+        $hojaRutaController->entregar();
+        break;
     case 'generar_hoja':
         $hojaRutaController->generar();
         break;
