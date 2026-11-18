@@ -10,6 +10,7 @@ require_once __DIR__ . '/../app/controllers/VentanillaController.php';
 require_once __DIR__ . '/../app/controllers/EnrutadorController.php';
 require_once __DIR__ . '/../app/controllers/PuntoController.php';
 require_once __DIR__ . '/../app/controllers/HojaRutaController.php';
+require_once __DIR__ . '/../app/controllers/InformeController.php';
 
 $action = $_GET['action'] ?? $_POST['action'] ?? 'login';
 
@@ -18,6 +19,7 @@ $ventanillaController = new VentanillaController();
 $enrutadorController = new EnrutadorController();
 $puntoController = new PuntoController();
 $hojaRutaController = new HojaRutaController();
+$informeController = new InformeController();
 
 switch ($action) {
     case 'login':
@@ -103,6 +105,15 @@ switch ($action) {
     case 'panel_admin':
         requerirRol([5]);
         echo "<h2>Panel del administrador (en construcción)</h2><a href='index.php?action=logout'>Cerrar sesión</a>";
+        break;
+    case 'informe_resumen':
+        $informeController->resumenPdf();
+        break;
+    case 'informes':
+        $informeController->mostrarInformes();
+        break;
+    case 'informe_vencer':
+        $informeController->porVencerPdf();
         break;
 
     default:
