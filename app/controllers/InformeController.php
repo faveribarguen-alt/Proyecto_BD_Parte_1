@@ -150,6 +150,6 @@ class InformeController {
         $inicioMes = (new DateTime('first day of this month'))->format('Y-m-d');
         $hoy = (new DateTime('today'))->format('Y-m-d');
 
-        require __DIR__ . '/../views/informes/index.php';
+        require __DIR__ . '/../views/informes/IndexInformes.php';
     } 
 }

@@ -11,6 +11,7 @@ require_once __DIR__ . '/../app/controllers/EnrutadorController.php';
 require_once __DIR__ . '/../app/controllers/PuntoController.php';
 require_once __DIR__ . '/../app/controllers/HojaRutaController.php';
 require_once __DIR__ . '/../app/controllers/InformeController.php';
+require_once __DIR__ . '/../app/controllers/DashboardController.php';
 
 $action = $_GET['action'] ?? $_POST['action'] ?? 'login';
 
@@ -20,6 +21,7 @@ $enrutadorController = new EnrutadorController();
 $puntoController = new PuntoController();
 $hojaRutaController = new HojaRutaController();
 $informeController = new InformeController();
+$dashboardController = new DashboardController();
 
 switch ($action) {
     case 'login':
@@ -115,6 +117,10 @@ switch ($action) {
     case 'informe_vencer':
         $informeController->porVencerPdf();
         break;
+    case 'dashboard':
+        $dashboardController->mostrarDashboard();
+        break;
+
 
     default:
         $authController->mostrarLogin();
